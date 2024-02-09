@@ -1,0 +1,122 @@
+.popupCall,
+.popupChat {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 3;
+  display: none;
+  &.show {
+    display: block;
+  }
+  &__content {
+    text-align: start;
+    width: 320px;
+    height: 676px;
+    padding-top: 80px;
+    box-shadow: 2px 0 50px 0px #7e7e82;
+
+    @media (min-width: $breakpoint_ml) {
+      width: 440px;
+      height: 940px;
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    font-family: 'TTLakesBold';
+    font-size: 28px;
+    height: 40px;
+
+    &::before {
+      content: '';
+      height: 40px;
+      width: 4px;
+      background-color: #41f6d7;
+      display: inline-block;
+      margin: 0 16px 0 0;
+      border-radius: 0 4px 4px 0;
+      position: relative;
+      top: 10px;
+    }
+  }
+}
+
+.phone-input,
+.name-input,
+.mail-input,
+.message-input {
+  width: 270px;
+  height: 48px;
+  margin: 30px 0 20px 20px;
+  border: 1px solid #7e7e82;
+  border-radius: 5px;
+
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: #7e7e82;
+    padding-left: 20px;
+
+    &::placeholder {
+      color: #7e7e82;
+    }
+  }
+
+  @media (min-width: $breakpoint_ml) {
+    width: 375px;
+    margin: 30px 0 20px 30px;
+  }
+}
+
+.message-input {
+  height: 120px;
+  input {
+    height: 40%;
+  }
+}
+
+.privacy-text {
+  width: auto;
+  padding-left: 20px;
+  font-size: 14px;
+
+  span {
+    color: #7e7e82;
+
+    &.pink {
+      color: #ff3e79;
+    }
+  }
+}
+
+.popupCall button,
+.popupChat button {
+  background-image: url('../img/Group10.svg');
+  width: 140px;
+  height: 32px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-color: #fff;
+  margin: 10px 0 0 170px;
+
+  @media (min-width: $breakpoint_ml) {
+    margin: 10px 0 0 270px;
+  }
+}
+
+.popup__end,
+.popup__close {
+  @extend %sizeBottomPU;
+  background-image: url('../img/esc.svg');
+  position: fixed;
+  right: 260px;
+  top: 20px;
+  @media (min-width: $breakpoint_ml) {
+    right: 470px;
+    top: 30px;
+  }
+}

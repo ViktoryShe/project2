@@ -1,0 +1,32 @@
+// прееменные
+$breakpoint_xl: 1440px;
+$breakpoint_ml: 1000px;
+$breakpoint_md: 768px;
+$breakpoint_sm: 320px;
+
+// осн. блоки
+html,
+body {
+  height: 100%;
+}
+body {
+  font-size: 16px;
+  color: black;
+  font-family: 'TTLakesReg', 'TTLakesMed', 'TTLakesBold';
+}
+.wrapper {
+  min-height: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+// контейнер
+[class*='__container'] {
+  max-width: auto;
+  margin: 0px auto;
+}
+
+.main {
+  flex: 1 1 auto;
+}

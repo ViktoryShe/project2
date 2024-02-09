@@ -1,0 +1,235 @@
+%bottomPop {
+  display: block;
+  padding: 15px 0 15px 24px;
+  cursor: pointer;
+  text-align: start;
+  color: black;
+  font-family: 'TTLakesMed';
+}
+%beforePop {
+  content: '';
+  height: 32px;
+  width: 4px;
+  background-color: #41f6d7;
+  border-radius: 0 3px 3px 0;
+  position: fixed;
+  left: 0;
+}
+%sizeBottomPU {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: none;
+  &.show {
+    display: block;
+  }
+  @media (min-width: $breakpoint_xl) {
+    position: absolute;
+    display: block;
+    transform: translateX(0%);
+  }
+}
+.popup__content {
+  width: 320px;
+  height: 676px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 50px 0px #7e7e82;
+  @media (min-width: $breakpoint_md) {
+    height: 1024px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    box-shadow: none;
+    height: 100vw;
+  }
+}
+.popup__title {
+  display: flex;
+  align-items: center;
+  min-height: 85px;
+}
+.popup__esc {
+  @extend %sizeBottomPU;
+  margin-left: 25px;
+  background-image: url('../img/esc.svg');
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  @media (min-width: $breakpoint_xl) {
+    display: none;
+  }
+}
+.popup__logo {
+  padding: 0 20px 0 20px;
+}
+.popup__search {
+  @extend %sizeBottomPU;
+  margin-left: 62px;
+  background-image: url('../img/search1.svg');
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  @media (min-width: $breakpoint_xl) {
+    margin-left: 110px;
+  }
+}
+.popup__button {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow-x: none;
+  @media (min-width: $breakpoint_md) {
+    margin-bottom: 300px;
+  }
+}
+.popup__button a:hover {
+  color: #7e7e82;
+}
+.popup__repair,
+.popup__services,
+.popup__client,
+.popup__sellers,
+.popup__partners,
+.popup__manufacturer,
+.popup__centers,
+.popup__contact {
+  @extend %bottomPop;
+
+  &:hover::after {
+    @extend %beforePop;
+  }
+}
+.popup__repair {
+  width: 300px;
+  &:hover::before {
+    top: 95px;
+  }
+}
+.popup__services {
+  &:hover::after {
+    top: 145px;
+  }
+}
+.popup__client {
+  &:hover::after {
+    top: 200px;
+  }
+}
+.popup__sellers {
+  &:hover::after {
+    top: 250px;
+  }
+}
+.popup__partners {
+  &:hover::after {
+    top: 305px;
+  }
+}
+.popup__manufacturer {
+  &:hover::after {
+    top: 355px;
+  }
+}
+.popup__centers {
+  &:hover::after {
+    top: 410px;
+  }
+}
+.popup__contact {
+  &:hover::after {
+    top: 460px;
+  }
+}
+.popup__addbutton {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+}
+.popup__call,
+.popup__chat,
+.popup__profile {
+  @extend %sizeBottomPU;
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+.popup__call {
+  margin-left: 24px;
+  background-image: url('../img/call.svg');
+}
+.popup__chat {
+  margin-left: 15px;
+  background-image: url('../img/chat.svg');
+}
+.popup__profile {
+  margin-left: 15px;
+  background-image: url('../img/profile.svg');
+}
+.popup__text {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow-x: auto;
+  height: auto;
+}
+.popup__mail,
+.popup__number {
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.popup__mail {
+  padding: 10px 0px 0px 24px;
+  font-size: 16px;
+  font-family: 'TTLakesMed';
+}
+.popup__number {
+  padding: 5px 0px 0px 24px;
+  font-size: 24px;
+  font-family: 'TTLakesBold';
+}
+.popup__language {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 10px;
+  font-size: 16px;
+  font-family: 'TTLakesMed';
+
+  &Ru,
+  &En,
+  &Ch {
+    &:hover {
+      color: #7e7e82;
+      text-decoration: underline;
+    }
+  }
+
+  &Ru {
+    padding-left: 24px;
+  }
+
+  &En,
+  &Ch {
+    padding-left: 10px;
+  }
+  @media (min-width: $breakpoint_md) {
+    padding-top: 40px;
+  }
+}

@@ -1,0 +1,106 @@
+// прееменные
+%hideBlock {
+  display: none;
+}
+%sizeBottom {
+  width: 40px;
+  height: 40px;
+  padding-left: 55px;
+  background-repeat: no-repeat;
+}
+%dividerBlock {
+  height: 32px;
+  width: 2px;
+  background-color: #eaeaea;
+}
+// общие стили для иконок
+.iconStyles {
+  @extend %sizeBottom;
+  &:hover {
+    transition: transform 1s;
+    opacity: 0.8;
+  }
+}
+
+//шапка
+.header {
+  width: 100%;
+  left: 0px;
+  top: 0;
+  @media (min-width: $breakpoint_xl) {
+    display: none;
+  }
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+  border-bottom: 2px solid #d9fff5;
+}
+.header__logo {
+  padding-left: 5px;
+  padding-right: 15px;
+  @media (min-width: $breakpoint_md) {
+    padding-left: 20px;
+  }
+}
+.divider {
+  @extend %hideBlock;
+  @extend %dividerBlock;
+  @media (min-width: $breakpoint_md) {
+    display: block;
+  }
+}
+.divider3 {
+  @extend %dividerBlock;
+  @media (min-width: $breakpoint_md) {
+    display: none;
+  }
+}
+.header_burger {
+  @extend %sizeBottom;
+  margin-left: 25px;
+  background-image: url('../img/burger.svg');
+  &:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+.header__button {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  overflow: auto;
+  height: auto;
+}
+
+.header__call,
+.header__chat,
+.header__profile {
+  @extend %hideBlock;
+  @extend .iconStyles;
+  background-image: url('../img/call.svg');
+  @media (min-width: $breakpoint_md) {
+    display: block;
+  }
+}
+.header__chat {
+  background-image: url('../img/chat.svg');
+}
+.header__profile {
+  background-image: url('../img/profile.svg');
+}
+.divider1 {
+  @extend %dividerBlock;
+  margin-right: 15px;
+  margin-top: 4px;
+}
+.header__repair {
+  @extend .iconStyles;
+  background-image: url('../img/repair.svg');
+}
+.header__search {
+  @extend .iconStyles;
+  background-image: url('../img/search.svg');
+}

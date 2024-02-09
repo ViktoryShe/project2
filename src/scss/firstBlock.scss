@@ -1,0 +1,230 @@
+// прееменные
+%horizontalBlock {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+%bottomFB {
+  display: block;
+  width: 246px;
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: center;
+  color: #7e7e82;
+}
+
+// основная часть 1 блок
+.first-block__container {
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #d9fff5;
+  @media (min-width: $breakpoint_md) {
+    width: 1120px;
+    height: 416px;
+    background: #f8f8f8 center 100%;
+    align-items: center;
+  }
+  @media (min-width: $breakpoint_xl) {
+    height: 535px;
+    margin: auto;
+    padding-top: 30px;
+    margin-left: 320px;
+  }
+}
+.first-block__content {
+  height: 60px;
+  width: 1440px;
+}
+.first-block__name {
+  height: 60px;
+  width: 1440px;
+  padding-top: 10px;
+  @extend %horizontalBlock;
+  overflow: hidden;
+}
+.block-text__title {
+  font-family: 'TTLakesBold';
+  font-size: 28px;
+  height: 40px;
+  &::before {
+    content: '';
+    height: 40px;
+    width: 4px;
+    background-color: #41f6d7;
+    display: inline-block;
+    margin: 0 16px 0 0;
+    border-radius: 0 4px 4px 0;
+    position: relative;
+    top: 10px;
+  }
+}
+.first-block__button {
+  @extend %horizontalBlock;
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 100vw;
+  max-width: 1100px;
+  @media (min-width: $breakpoint_xl) {
+    padding-top: 10px;
+    flex-wrap: wrap;
+    width: 1120px;
+  }
+}
+.first-block__button a:hover {
+  border: 2px solid #b8ffec;
+  background-color: white;
+  border-radius: 5px;
+}
+.first-block__devices {
+  @extend %bottomFB;
+}
+.first-block__addServices {
+  @extend %bottomFB;
+}
+.first-block__price {
+  @extend %bottomFB;
+  @media (min-width: $breakpoint_xl) {
+    width: 152px;
+  }
+}
+.first-block__address {
+  @extend %bottomFB;
+  @media (min-width: $breakpoint_xl) {
+    width: 233px;
+  }
+}
+.first-block__specialPrices {
+  @extend %bottomFB;
+  @media (min-width: $breakpoint_xl) {
+    width: 191px;
+  }
+}
+.first-block__reviews {
+  @extend %bottomFB;
+  @media (min-width: $breakpoint_xl) {
+    width: 95px;
+  }
+}
+.first-block__text {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 20px 10px 0px 20px;
+  width: 100vw;
+  height: 110px;
+  font-size: 15px;
+  line-height: 18px;
+  @media (min-width: $breakpoint_md) {
+    white-space: pre-line;
+    padding-top: 20px 0px 0 20px;
+    width: 45vw;
+    height: 180px;
+    font-size: 14px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    padding-top: 0px;
+    padding-left: 30px;
+    width: 520px;
+    height: 160px;
+    font-size: 14px;
+  }
+}
+.first-block__text.expanded {
+  height: 220px;
+  @media (min-width: $breakpoint_md) {
+    height: 250px;
+  }
+}
+.first-block__readMore {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+.first-block__icon {
+  font-family: 'TTLakesMed';
+  font-size: 16px;
+  color: black;
+  &::before {
+    content: '';
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    display: inline-block;
+    background-image: url('../img/expand.svg');
+    background-repeat: no-repeat;
+    position: relative;
+    top: 5px;
+  }
+}
+.first-block__image {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 240px;
+  height: 31vh;
+  max-height: 190px;
+  width: 100vw;
+  padding-bottom: 20px;
+  @media (min-width: $breakpoint_md) {
+    margin-top: 105px;
+    padding-left: 350px;
+    height: 40vh;
+    width: 100vw;
+    max-height: 260px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    justify-content: flex-start;
+    margin-top: 100px;
+    margin-left: 550px;
+    padding-left: 0px;
+    height: 307px;
+    max-height: 307px;
+    width: 532px;
+    border-radius: 10px;
+    padding-bottom: 0px;
+  }
+}
+.first-block__repair {
+  display: none;
+  width: 40px;
+  height: 40px;
+  margin: 10px 0 0 580px;
+  background-image: url('../img/repair.svg');
+  background-repeat: no-repeat;
+  &::before {
+    content: 'Оставить заявку';
+    display: inline-block;
+    margin: 0px 0px 0px -140px;
+    position: relative;
+    top: 10px;
+    font-size: 16px;
+    color: black;
+    font-family: 'TTLakesMed';
+  }
+  @media (min-width: $breakpoint_xl) {
+    display: flex;
+  }
+}
+.first-block__search {
+  display: none;
+  width: 40px;
+  height: 40px;
+  margin: 10px 0 0 160px;
+  background-image: url('../img/search.svg');
+  background-repeat: no-repeat;
+  &::before {
+    content: 'Статус ремонта';
+    display: inline-block;
+    margin: 0 0px 0 -130px;
+    position: relative;
+    top: 10px;
+    color: black;
+    font-size: 16px;
+    font-family: 'TTLakesMed';
+  }
+  @media (min-width: $breakpoint_xl) {
+    display: flex;
+  }
+}

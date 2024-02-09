@@ -1,0 +1,187 @@
+.price__container {
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #d9fff5;
+  @media (min-width: $breakpoint_md) {
+    width: 1120px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    margin-left: 320px;
+  }
+}
+.price__content {
+  margin: auto;
+  height: 560px;
+  width: auto;
+  @media (min-width: $breakpoint_md) {
+    height: 660px;
+    width: 1120px;
+  }
+}
+.price__name {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  color: #7e7e82;
+  padding-left: 20px;
+  font-size: 16px;
+  background-image: linear-gradient(90deg, #f8f8f8 2%, #ffffff 98%);
+  width: 100%;
+}
+.wrapperP__container {
+  padding-top: 20px;
+  flex-wrap: nowrap;
+  width: 1090px; //!important;
+  height: auto;
+  @media (min-width: $breakpoint_md) {
+    white-space: wrap;
+    flex-wrap: wrap;
+    overflow: hidden;
+    flex-direction: row;
+    width: 780px !important;
+    height: 550px;
+    margin: 0px;
+    flex-direction: column;
+    padding-top: 0px;
+  }
+  @media (min-width: $breakpoint_md) {
+    width: 1200px !important;
+  }
+}
+.card__container {
+  width: 260px;
+  min-height: 200px;
+  display: flex;
+  font-family: 'TTLakesMed';
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  background-color: white;
+  flex-direction: column;
+  padding: 25px 0px 0px 20px;
+  background-image: url('../img/Order.svg');
+  background-repeat: no-repeat;
+  background-position: 120px 150px;
+  margin: 0px;
+  @media (min-width: $breakpoint_md) {
+    width: 740px;
+    min-height: 71px;
+    flex-direction: row;
+    border-radius: 0px;
+    background-position: 605px 20px;
+  }
+  @media (min-width: $breakpoint_ml) {
+    width: 1080px;
+    min-height: 71px;
+    background-position: 930px 20px;
+  }
+}
+.card__info {
+  margin-bottom: 10px;
+  @media (min-width: $breakpoint_md) {
+    width: 400px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    width: 500px;
+  }
+}
+.card__price {
+  margin-bottom: 10px;
+  @media (min-width: $breakpoint_md) {
+    width: 90px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    width: 200px;
+  }
+}
+.card__time {
+  margin-bottom: 10px;
+}
+.card__bottom {
+  color: #7e7e82;
+  @media (min-width: $breakpoint_md) {
+    display: none;
+  }
+}
+.swiperPrice {
+  @media (min-width: $breakpoint_md) {
+    height: 420px;
+  }
+}
+.card__top {
+  display: none;
+  @media (min-width: $breakpoint_md) {
+    display: block;
+    color: #7e7e82;
+    position: relative;
+    left: 30px;
+    top: 22px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    left: 30px;
+  }
+}
+.card__top1 {
+  display: none;
+  @media (min-width: $breakpoint_md) {
+    display: block;
+    color: #7e7e82;
+    position: relative;
+    left: 440px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    left: 530px;
+  }
+}
+.card__top2 {
+  display: none;
+  @media (min-width: $breakpoint_md) {
+    display: block;
+    color: #7e7e82;
+    position: relative;
+    left: 530px;
+    bottom: 22px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    left: 730px;
+  }
+}
+.price__text {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 0px 10px 0px 20px;
+  width: 100vw;
+  height: 110px;
+  font-size: 14px;
+  line-height: 18px;
+  @media (min-width: $breakpoint_md) {
+    white-space: pre-line;
+    padding-top: 20px 0 0 20px;
+    width: 62vw;
+    height: 80px;
+    font-size: 14px;
+  }
+}
+.price__more {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 10px 0 20px;
+}
+.price__icon {
+  font-family: 'TTLakesMed';
+  font-size: 16px;
+  color: black;
+  &::after {
+    content: '';
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    display: inline-block;
+    background-image: url('../img/more.svg');
+    background-repeat: no-repeat;
+    position: relative;
+    top: 5px;
+  }
+}

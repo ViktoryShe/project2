@@ -1,0 +1,204 @@
+// прееменные
+%bottomBS {
+  display: block;
+  width: 240px;
+  height: 72px;
+  cursor: pointer;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  background-color: white;
+  background-image: url('../img/go.svg');
+  background-repeat: no-repeat;
+  background-position: 180px 16px;
+}
+// основная часть бренды
+
+.brands__container {
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #d9fff5;
+  @media (min-width: $breakpoint_md) {
+    width: 1120px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    margin-left: 320px;
+  }
+}
+.brands__content {
+  margin: auto;
+  width: auto;
+  height: 220px;
+  @media (min-width: $breakpoint_md) {
+    height: 350px;
+    width: 1120px;
+  }
+  @media (min-width: $breakpoint_ml) {
+    height: 350px;
+  }
+}
+.brands__content.expanded {
+  @media (min-width: $breakpoint_md) {
+    height: 540px;
+  }
+  @media (min-width: $breakpoint_ml) {
+    height: 440px;
+  }
+}
+.brands__name {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  color: #7e7e82;
+  padding-left: 20px;
+  font-size: 16px;
+  background-image: linear-gradient(90deg, #f8f8f8 2%, #ffffff 98%);
+  width: 100%;
+}
+.swiper {
+  width: 1120px;
+  height: 270px;
+  z-index: 1;
+  @media (min-width: $breakpoint_md) {
+    height: 200px;
+  }
+  @media (min-width: $breakpoint_ml) {
+    height: 200px;
+  }
+}
+.swiper.expanded {
+  @media (min-width: $breakpoint_md) {
+    height: 390px;
+  }
+  @media (min-width: $breakpoint_ml) {
+    height: 280px;
+  }
+}
+.wrapper__container {
+  padding-left: 10px;
+  padding-top: 20px;
+  flex-wrap: nowrap;
+  width: 1090px !important;
+  height: auto;
+  @media (min-width: $breakpoint_md) {
+    white-space: wrap;
+    flex-wrap: wrap;
+    overflow: hidden;
+    flex-direction: row;
+    height: 380px !important;
+    width: 780px !important;
+    margin: 0px;
+  }
+  @media (min-width: $breakpoint_ml) {
+    height: 270px !important;
+    width: 1120px !important;
+  }
+}
+.swiper-slide {
+  @media (min-width: $breakpoint_md) {
+    width: 224px !important;
+    height: 70px !important;
+    margin-left: 10px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    width: 240px !important;
+    height: 70px !important;
+  }
+}
+.bottom__container {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.swiper-pagination {
+  display: block;
+  width: 320px !important;
+  position: relative;
+  top: 15px !important;
+  &-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #dddddd;
+    &-active {
+      background-color: #b5b6bc;
+    }
+  }
+  @media (min-width: $breakpoint_md) {
+    display: none;
+  }
+  @media (min-width: $breakpoint_xl) {
+    display: none;
+  }
+}
+.brands__lenovo,
+.brands__samsung,
+.brands__apple,
+.brands__sonic,
+.brands__bosch,
+.brands__hp,
+.brands__acer,
+.brands__sony,
+.brands__lenovo1,
+.brands__samsung1,
+.brands__apple1 {
+  @extend %bottomBS;
+  @media (min-width: $breakpoint_md) {
+    width: 224px;
+    background-position: 170px 16px;
+  }
+  @media (min-width: $breakpoint_xl) {
+    width: 240px;
+  }
+}
+
+.brands__lenovo,
+.brands__bosch,
+.brands__lenovo1 {
+  padding: 20px 0px 0px 20px;
+}
+
+.brands__samsung,
+.brands__samsung1 {
+  padding: 15px 0px 0px 20px;
+}
+
+.brands__apple,
+.brands__apple1,
+.brands__hp {
+  padding: 10px 0px 0px 10px;
+}
+
+.brands__acer,
+.brands__sony,
+.brands__sonic {
+  padding: 20px 0px 0px 15px;
+}
+.brands__more {
+  display: none;
+  @media (min-width: $breakpoint_md) {
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+}
+.brands__showMore {
+  font-family: 'TTLakesMed';
+  font-size: 16px;
+  color: black;
+  padding-left: 10px;
+  cursor: pointer;
+  &::before {
+    content: '';
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    display: inline-block;
+    background-image: url('../img/expand.svg');
+    background-repeat: no-repeat;
+    position: relative;
+    top: 5px;
+    content: attr(data-icon);
+    transition: transform 0.2s ease;
+  }
+}
+.brands__showMore.rotate::before {
+  transform: rotate(180deg);
+}

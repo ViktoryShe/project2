@@ -1,0 +1,13 @@
+@import 'null.scss'; //файл обнуление стилей
+@import 'fonts.scss'; //Шрифты
+@import 'body.scss'; //обертка
+@import 'header.scss'; //шапка
+// @import 'media.scss'; //медиа запросы
+@import 'firstBlock.scss'; // основная часть 1 блок
+@import 'brands.scss'; // основная часть бренды
+@import '../../node_modules/swiper/swiper-bundle.css'; //свапе
+@import 'technique.scss'; // основная часть техника
+@import 'price.scss'; // основная часть цены
+@import 'footer.scss'; // подвал
+@import 'popup.scss'; // модальное окно
+@import 'popupCallChat.scss'; // модальные окна звонок и сообщение
