@@ -831,6 +831,13 @@ body {
   transition: transform 1s;
   opacity: 0.8; }
 
+@media (min-width: 768px) {
+  .iconStyles, .header__call,
+  .header__chat,
+  .header__profile, .header__repair, .header__search {
+    height: 50px;
+    margin-top: 10px; } }
+
 .header {
   width: 100%;
   left: 0px;
@@ -862,7 +869,8 @@ body {
 
 .header_burger {
   margin-left: 25px;
-  background-image: url(./static/burger.svg); }
+  background-image: url(./static/burger.svg);
+  background-color: #ffff; }
   .header_burger:hover {
     transition: transform 1s;
     transform: scale(1.2);
@@ -883,7 +891,8 @@ body {
     .header__call,
     .header__chat,
     .header__profile {
-      display: block; } }
+      display: block;
+      background-color: #ffff; } }
 
 .header__chat {
   background-image: url(./static/chat.svg); }
@@ -892,8 +901,12 @@ body {
   background-image: url(./static/profile.svg); }
 
 .divider1 {
-  margin-right: 15px;
-  margin-top: 4px; }
+  display: none; }
+  @media (min-width: 768px) {
+    .divider1 {
+      display: block;
+      margin-top: 10px;
+      margin-right: 15px; } }
 
 .header__repair {
   background-image: url(./static/repair.svg); }
@@ -1717,7 +1730,6 @@ body {
   position: fixed;
   top: 0;
   left: auto;
-  background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
   display: none; }
   .popup.show {
@@ -1727,17 +1739,28 @@ body {
       position: absolute;
       display: block;
       transform: translateX(0%); } }
+  .popup:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: white;
+    opacity: 0.8; }
 
-.popup__content {
+.popup__inner {
   width: 320px;
   height: 676px;
   background-color: #ffffff;
   box-shadow: 2px 0 50px 0px #7e7e82; }
   @media (min-width: 768px) {
-    .popup__content {
+    .popup__inner {
       height: 1024px; } }
   @media (min-width: 1440px) {
-    .popup__content {
+    .popup__inner {
       box-shadow: none;
       height: 100vw; } }
 
@@ -1748,7 +1771,8 @@ body {
 
 .popup__esc {
   margin-left: 25px;
-  background-image: url(./static/esc.svg); }
+  background-image: url(./static/esc.svg);
+  background-color: #ffffff; }
   .popup__esc:hover {
     transition: transform 1s;
     transform: scale(1.2);
@@ -1814,12 +1838,16 @@ body {
   align-items: center;
   min-height: 60px; }
 
-.popup__call:hover,
-.popup__chat:hover,
-.popup__profile:hover {
-  transition: transform 1s;
-  transform: scale(1.2);
-  opacity: 0.8; }
+.popup__call,
+.popup__chat,
+.popup__profile {
+  background-color: #ffffff; }
+  .popup__call:hover,
+  .popup__chat:hover,
+  .popup__profile:hover {
+    transition: transform 1s;
+    transform: scale(1.2);
+    opacity: 0.8; }
 
 .popup__call {
   margin-left: 24px;
@@ -1877,37 +1905,37 @@ body {
     .popup__language {
       padding-top: 40px; } }
 
-.popupCall,
-.popupChat {
+.popup-call,
+.popup-chat {
   position: fixed;
   top: 0;
   right: 0;
   background-color: #fff;
   z-index: 3;
   display: none; }
-  .popupCall.show,
-  .popupChat.show {
+  .popup-call.show,
+  .popup-chat.show {
     display: block; }
-  .popupCall__content,
-  .popupChat__content {
+  .popup-call__inner,
+  .popup-chat__inner {
     text-align: start;
     width: 320px;
     height: 676px;
     padding-top: 80px;
     box-shadow: 2px 0 50px 0px #7e7e82; }
     @media (min-width: 1000px) {
-      .popupCall__content,
-      .popupChat__content {
+      .popup-call__inner,
+      .popup-chat__inner {
         width: 440px;
         height: 940px;
         padding-top: 20px; } }
-  .popupCall__title,
-  .popupChat__title {
+  .popup-call__title,
+  .popup-chat__title {
     font-family: 'TTLakesBold';
     font-size: 28px;
     height: 40px; }
-    .popupCall__title::before,
-    .popupChat__title::before {
+    .popup-call__title::before,
+    .popup-chat__title::before {
       content: '';
       height: 40px;
       width: 4px;
@@ -1917,6 +1945,18 @@ body {
       border-radius: 0 4px 4px 0;
       position: relative;
       top: 10px; }
+  .popup-call:after,
+  .popup-chat:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: white;
+    opacity: 0.8; }
 
 .phone-input,
 .name-input,
@@ -1936,7 +1976,7 @@ body {
     border: none;
     background-color: transparent;
     font-size: 16px;
-    color: #7e7e82;
+    color: black;
     padding-left: 20px; }
     .phone-input input::-webkit-input-placeholder,
     .name-input input::-webkit-input-placeholder,
@@ -1980,8 +2020,7 @@ body {
     .privacy-text span.pink {
       color: #ff3e79; }
 
-.popupCall button,
-.popupChat button {
+.popup__sent {
   background-image: url(./static/Group10.svg);
   width: 140px;
   height: 32px;
@@ -1990,8 +2029,7 @@ body {
   background-color: #fff;
   margin: 10px 0 0 170px; }
   @media (min-width: 1000px) {
-    .popupCall button,
-    .popupChat button {
+    .popup__sent {
       margin: 10px 0 0 270px; } }
 
 .popup__end,
