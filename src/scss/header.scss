@@ -20,6 +20,10 @@
     transition: transform 1s;
     opacity: 0.8;
   }
+  @media (min-width: $breakpoint_md) {
+    height: 50px;
+    margin-top: 10px;
+  }
 }
 
 //шапка
@@ -61,6 +65,7 @@
   @extend %sizeBottom;
   margin-left: 25px;
   background-image: url('../img/burger.svg');
+  background-color: #ffff;
   &:hover {
     transition: transform 1s;
     transform: scale(1.2);
@@ -83,6 +88,7 @@
   background-image: url('../img/call.svg');
   @media (min-width: $breakpoint_md) {
     display: block;
+    background-color: #ffff;
   }
 }
 .header__chat {
@@ -93,8 +99,12 @@
 }
 .divider1 {
   @extend %dividerBlock;
-  margin-right: 15px;
-  margin-top: 4px;
+  display: none;
+  @media (min-width: $breakpoint_md) {
+    display: block;
+    margin-top: 10px;
+    margin-right: 15px;
+  }
 }
 .header__repair {
   @extend .iconStyles;

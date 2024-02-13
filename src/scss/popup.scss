@@ -25,7 +25,6 @@
   position: fixed;
   top: 0;
   left: auto;
-  background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
   display: none;
   &.show {
@@ -36,8 +35,20 @@
     display: block;
     transform: translateX(0%);
   }
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: white;
+    opacity: 0.8;
+  }
 }
-.popup__content {
+.popup__inner {
   width: 320px;
   height: 676px;
   background-color: #ffffff;
@@ -59,6 +70,7 @@
   @extend %sizeBottomPU;
   margin-left: 25px;
   background-image: url('../img/esc.svg');
+  background-color: #ffffff;
   &:hover {
     transition: transform 1s;
     transform: scale(1.2);
@@ -160,6 +172,7 @@
 .popup__chat,
 .popup__profile {
   @extend %sizeBottomPU;
+  background-color: #ffffff;
   &:hover {
     transition: transform 1s;
     transform: scale(1.2);
