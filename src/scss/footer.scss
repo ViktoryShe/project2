@@ -5,43 +5,45 @@
   padding: 20px 5px 0px 5px;
 }
 
-.footer__container {
-  background-color: #f8f8f8;
-  padding-bottom: 20px;
-  @media (min-width: $breakpoint_md) {
-    width: auto;
-    max-width: 1120px;
+.footer {
+  &__container {
+    background-color: #f8f8f8;
+    padding-bottom: 20px;
+    @media (min-width: $breakpoint_md) {
+      width: auto;
+      max-width: 1120px;
+    }
+    @media (min-width: $breakpoint_xl) {
+      margin-left: 320px;
+      max-width: 1120px;
+    }
   }
-  @media (min-width: $breakpoint_xl) {
-    margin-left: 320px;
-    max-width: 1120px;
+  &__content {
+    @media (min-width: $breakpoint_md) {
+      display: flex;
+      flex-direction: row;
+    }
   }
-}
-.footer__content {
-  @media (min-width: $breakpoint_md) {
-    display: flex;
-    flex-direction: row;
+  &__text-left {
+    @extend %textF;
+    @media (min-width: $breakpoint_md) {
+      width: 33%;
+      text-align: start;
+      padding-left: 20px;
+    }
   }
-}
-.footer__name {
-  @extend %textF;
-  @media (min-width: $breakpoint_md) {
-    width: 33%;
-    text-align: start;
-    padding-left: 20px;
+  &__text-center {
+    @extend %textF;
+    @media (min-width: $breakpoint_md) {
+      width: 33%;
+    }
   }
-}
-.footer__name1 {
-  @extend %textF;
-  @media (min-width: $breakpoint_md) {
-    width: 33%;
-  }
-}
-.footer__name2 {
-  @extend %textF;
-  @media (min-width: $breakpoint_md) {
-    width: 33%;
-    text-align: end;
-    padding-right: 20px;
+  &__text-right {
+    @extend %textF;
+    @media (min-width: $breakpoint_md) {
+      width: 33%;
+      text-align: end;
+      padding-right: 20px;
+    }
   }
 }

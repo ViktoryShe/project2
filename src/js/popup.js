@@ -1,4 +1,4 @@
-const openModalButton = document.querySelector('.header_burger')
+const openModalButton = document.querySelector('.header__burger')
 const modal = document.querySelector('.popup')
 const closeModalButton = document.querySelector('.popup__esc')
 

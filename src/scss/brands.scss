@@ -11,47 +11,123 @@
   background-repeat: no-repeat;
   background-position: 180px 16px;
 }
-// основная часть бренды
 
-.brands__container {
-  background-color: #f8f8f8;
-  border-bottom: 2px solid #d9fff5;
-  @media (min-width: $breakpoint_md) {
-    width: 1120px;
+// основная часть бренды
+.brands {
+  &__container {
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #d9fff5;
+    @media (min-width: $breakpoint_md) {
+      width: 1120px;
+    }
+    @media (min-width: $breakpoint_xl) {
+      margin-left: 320px;
+    }
   }
-  @media (min-width: $breakpoint_xl) {
-    margin-left: 320px;
+  &__content {
+    margin: auto;
+    width: auto;
+    height: 220px;
+    @media (min-width: $breakpoint_md) {
+      height: 350px;
+      width: 1120px;
+    }
+    @media (min-width: $breakpoint_ml) {
+      height: 350px;
+    }
   }
-}
-.brands__content {
-  margin: auto;
-  width: auto;
-  height: 220px;
-  @media (min-width: $breakpoint_md) {
-    height: 350px;
-    width: 1120px;
+  &__content.expanded {
+    @media (min-width: $breakpoint_md) {
+      height: 540px;
+    }
+    @media (min-width: $breakpoint_ml) {
+      height: 440px;
+    }
   }
-  @media (min-width: $breakpoint_ml) {
-    height: 350px;
+  &__name {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    color: #7e7e82;
+    padding-left: 20px;
+    font-size: 16px;
+    background-image: linear-gradient(90deg, #f8f8f8 2%, #ffffff 98%);
+    width: 100%;
   }
-}
-.brands__content.expanded {
-  @media (min-width: $breakpoint_md) {
-    height: 540px;
+  &__lenovo,
+  &__samsung,
+  &__apple,
+  &__sonic,
+  &__bosch,
+  &__hp,
+  &__acer,
+  &__sony,
+  &__lenovo1,
+  &__samsung1,
+  &__apple1 {
+    @extend %bottomBS;
+    @media (min-width: $breakpoint_md) {
+      width: 224px;
+      background-position: 170px 16px;
+    }
+    @media (min-width: $breakpoint_xl) {
+      width: 240px;
+    }
   }
-  @media (min-width: $breakpoint_ml) {
-    height: 440px;
+  &__lenovo,
+  &__bosch,
+  &__lenovo1 {
+    padding: 20px 0px 0px 20px;
   }
-}
-.brands__name {
-  display: flex;
-  align-items: center;
-  height: 80px;
-  color: #7e7e82;
-  padding-left: 20px;
-  font-size: 16px;
-  background-image: linear-gradient(90deg, #f8f8f8 2%, #ffffff 98%);
-  width: 100%;
+
+  &__samsung,
+  &__samsung1 {
+    padding: 15px 0px 0px 20px;
+  }
+
+  &__apple,
+  &__apple1,
+  &__hp {
+    padding: 10px 0px 0px 10px;
+  }
+
+  &__acer,
+  &__sony,
+  &__sonic {
+    padding: 20px 0px 0px 15px;
+  }
+  &__more {
+    display: none;
+    @media (min-width: $breakpoint_md) {
+      display: flex;
+      flex-direction: row;
+      padding-left: 40px;
+      padding-top: 10px;
+    }
+  }
+  &__showMore {
+    font-family: 'TTLakesMed';
+    font-size: 16px;
+    color: black;
+    padding-left: 10px;
+    cursor: pointer;
+    &::before {
+      content: '';
+      height: 24px;
+      width: 24px;
+      margin-right: 10px;
+      display: inline-block;
+      background-image: url('../img/expand.svg');
+      background-repeat: no-repeat;
+      position: relative;
+      top: 5px;
+      content: attr(data-icon);
+      transition: transform 0.2s ease;
+    }
+  }
+  &__showMore.rotate::before {
+    transform: rotate(180deg);
+  }
 }
 .swiper {
   width: 1120px;
@@ -126,79 +202,4 @@
   @media (min-width: $breakpoint_xl) {
     display: none;
   }
-}
-.brands__lenovo,
-.brands__samsung,
-.brands__apple,
-.brands__sonic,
-.brands__bosch,
-.brands__hp,
-.brands__acer,
-.brands__sony,
-.brands__lenovo1,
-.brands__samsung1,
-.brands__apple1 {
-  @extend %bottomBS;
-  @media (min-width: $breakpoint_md) {
-    width: 224px;
-    background-position: 170px 16px;
-  }
-  @media (min-width: $breakpoint_xl) {
-    width: 240px;
-  }
-}
-
-.brands__lenovo,
-.brands__bosch,
-.brands__lenovo1 {
-  padding: 20px 0px 0px 20px;
-}
-
-.brands__samsung,
-.brands__samsung1 {
-  padding: 15px 0px 0px 20px;
-}
-
-.brands__apple,
-.brands__apple1,
-.brands__hp {
-  padding: 10px 0px 0px 10px;
-}
-
-.brands__acer,
-.brands__sony,
-.brands__sonic {
-  padding: 20px 0px 0px 15px;
-}
-.brands__more {
-  display: none;
-  @media (min-width: $breakpoint_md) {
-    display: flex;
-    flex-direction: row;
-    padding-left: 40px;
-    padding-top: 10px;
-  }
-}
-.brands__showMore {
-  font-family: 'TTLakesMed';
-  font-size: 16px;
-  color: black;
-  padding-left: 10px;
-  cursor: pointer;
-  &::before {
-    content: '';
-    height: 24px;
-    width: 24px;
-    margin-right: 10px;
-    display: inline-block;
-    background-image: url('../img/expand.svg');
-    background-repeat: no-repeat;
-    position: relative;
-    top: 5px;
-    content: attr(data-icon);
-    transition: transform 0.2s ease;
-  }
-}
-.brands__showMore.rotate::before {
-  transform: rotate(180deg);
 }
