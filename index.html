@@ -9,8 +9,8 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="header__container">
-          <button id="popup" class="header_burger"></button>
+        <nav class="header__container">
+          <button id="popup" class="header__burger"></button>
           <span class="divider"></span>
           <a href="#" class="header__logo">
             <img src="img/Group.svg" alt="Logo">
@@ -24,10 +24,10 @@
             <a href="#" class="header__repair"> </a>
             <a href="#" class="header__search"> </a>
           </div>
-        </div>
+        </nav>
       </header>
       <main class="main">
-        <div id="popup" class="popup">
+        <section id="popup" class="popup">
           <div class="popup__inner">
             <div class="popup__title">
               <button class="popup__esc"> </button>
@@ -65,57 +65,66 @@
               </div>
             </div>
           </div>
-        </div>
-        <div id="popup-call" class="popup-call">
+        </section>
+        <section id="popup-call" class="popup-call">
           <div class="popup-call__inner">
             <button class="popup__end"> </button>
-            <div class="popup-call__title">Заказать звонок </div>
-            <div class="phone-input">
-              <input type="tel" placeholder="Телефон">
-            </div>
-            <div class="privacy-text">
-              Нажимая “отправить”, вы даете согласие на
-              <span class="pink">обработку персональных данных</span> и
-              соглашаетесь с нашей
-              <span class="pink">политикой конфиденциальности</span>
-            </div>
-            <button class="popup__sent"> </button>
+            <h2 class="popup-call__title">Заказать звонок </h2>
+            <form id="phone-form">
+              <div class="phone-input">
+                <label for="phone"></label>
+                <input type="tel" id="phone" name="phone" placeholder="Телефон" required pattern="[0-9]{10}">
+              </div>
+              <div class="privacy-text">
+                Нажимая “отправить”, вы даете согласие на
+                <span class="pink">обработку персональных данных</span> и
+                соглашаетесь с нашей
+                <span class="pink">политикой конфиденциальности</span>
+              </div>
+              <button type="submit" class="popup__sent"> </button>
+            </form>
           </div>
-        </div>
-        <div id="popup-chat" class="popup-chat">
+        </section>
+        <section id="popup-chat" class="popup-chat">
           <div class="popup-chat__inner">
             <button class="popup__close"> </button>
-            <div class="popup-chat__title">Обратная связь</div>
-            <div class="name-input">
-              <input type="text" placeholder="Имя">
-            </div>
-            <div class="phone-input">
-              <input type="tel" placeholder="Телефон">
-            </div>
-            <div class="mail-input">
-              <input type="email" placeholder="Электронная почта">
-            </div>
-            <div class="message-input">
-              <input type="text" placeholder="Сообщение">
-            </div>
-            <div class="privacy-text">
-              Нажимая “отправить”, вы даете согласие на
-              <span class="pink">обработку персональных данных</span> и
-              соглашаетесь с нашей
-              <span class="pink">политикой конфиденциальности</span>
-            </div>
-            <button class="popup__sent"> </button>
+            <h2 class="popup-chat__title">Обратная связь</h2>
+            <form id="contact-form">
+              <div class="name-input">
+                <label for="name"></label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+              </div>
+              <div class="phone-input">
+                <label for="phone"></label>
+                <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required pattern="[0-9]{10}">
+              </div>
+              <div class="mail-input">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Введите вашу почту" required>
+              </div>
+              <div class="message-input">
+                <label for="message"></label>
+                <input type="text" id="message" name="message" placeholder="Введите ваше сообщение" required>
+              </div>
+              <div class="privacy-text">
+                Нажимая “отправить”, вы даете согласие на
+                <span class="pink">обработку персональных данных</span> и
+                соглашаетесь с нашей
+                <span class="pink">политикой конфиденциальности</span>
+              </div>
+              <button type="submit" class="popup__sent"> </button>
+            </form>
           </div>
-        </div>
+        </section>
         <section class="first-block">
           <div class="first-block__container">
-            <div class="first-block__content">
+            <article class="first-block__content">
               <div class="first-block__name">
-                <div class="block-text__title">Услуги и сервисы </div>
+                <h2 class="block-text__title">Услуги и сервисы </h2>
                 <a href="#" class="first-block__repair"> </a>
                 <a href="#" class="first-block__search"> </a>
               </div>
-              <div class="first-block__button">
+              <nav class="first-block__button">
                 <a href="#" class="first-block__devices">
                   Ремонтируемые устройства
                 </a>
@@ -130,7 +139,7 @@
                   Специальные цены
                 </a>
                 <a href="#" class="first-block__reviews"> Отзывы </a>
-              </div>
+              </nav>
               <div class="first-block__text">
                 Мы являемся авторизованным сервисным центром по ремонту техники
                 Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
@@ -139,21 +148,20 @@
                 большое количество постоянных клиентов. Мы гордимся тем, что к
                 нам обращаются по рекомендациям и, в свою очередь, советуют нас
                 родным и близким.
-                
               </div>
               <div class="first-block__readMore">
                 <a href="#" class="first-block__icon"> Читать далее </a>
               </div>
-            </div>
-            <div class="first-block__image">
+            </article>
+            <aside class="first-block__image">
               <img src="img/PictureCopy.jpg" alt="Изображение">
-            </div>
+            </aside>
           </div>
         </section>
         <section class="brands">
           <div class="brands__container">
             <div class="brands__content">
-              <div class="brands__name"> РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ </div>
+              <h2 class="brands__name"> РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ </h2>
               <div class="swiper">
                 <div class="swiper-wrapper wrapper__container">
                   <div class="swiper-slide bottom__container">
@@ -223,9 +231,7 @@
         <section class="technique">
           <div class="technique__container">
             <div class="technique__content">
-              <div class="technique__name">
-                РЕМОНТ РАЗЛИЧНЫХ ВИДОВ ТЕХНИКИ
-              </div>
+              <h2 class="technique__name"> РЕМОНТ РАЗЛИЧНЫХ ВИДОВ ТЕХНИКИ </h2>
               <div class="swiper swiperTechnique">
                 <div class="swiper-wrapper wrapperT__container">
                   <div class="swiper-slide bottom__container">
@@ -240,6 +246,9 @@
                   <div class="swiper-slide bottom__container">
                     <a href="#" class="technique__monitor">Ремонт мониторов</a>
                   </div>
+                  <div class="swiper-slide bottom__container">
+                    <a href="#" class="technique__mobile">Ремонт телефонов</a>
+                  </div>
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
@@ -252,12 +261,14 @@
         <section class="price">
           <div class="price__container">
             <div class="price__content">
-              <div class="price__name"> ЦЕНЫ НА УСЛУГИ </div>
+              <h2 class="price__name"> ЦЕНЫ НА УСЛУГИ </h2>
               <div class="swiper swiperPrice">
                 <div class="swiper-wrapper wrapperP__container">
-                  <div class="card__top">Ремонтные услуги</div>
-                  <div class="card__top1">Цена</div>
-                  <div class="card__top2">Срок</div>
+                  <div class="card__container-name">
+                    <div class="card__left-name">Ремонтные услуги</div>
+                    <div class="card__center-name">Цена</div>
+                    <div class="card__right-name">Срок</div>
+                  </div>
                   <div class="swiper-slide bottom__container">
                     <div class="card__container">
                       <div class="card__bottom">Ремонтные услуги</div>
@@ -311,11 +322,11 @@
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
-              <div class="price__text">
+              <aside class="price__text">
                 Все цены указаны с учетом НДС. Стоимость ремонта указана на
                 единичную услугу. Для получения коммерческого предложения на
                 постоянное обслуживание, оставьте заявку.
-              </div>
+              </aside>
               <div class="price__more">
                 <a href="#" class="price__icon">
                   Получить коммерческое предложение</a>
@@ -327,11 +338,11 @@
       <footer class="footer">
         <div class="footer__container">
           <div class="footer__content">
-            <div class="footer__name">
+            <div class="footer__text-left">
               <p>© 2019 CPS</p>
               <p>Разработано командой Apesong</p></div>
-            <div class="footer__name1"> Политика конфиденциальности</div>
-            <div class="footer__name2">
+            <div class="footer__text-center"> Политика конфиденциальности</div>
+            <div class="footer__text-right">
               Информация, размещенная на данной странице, не является публичной
               офертой</div>
           </div>
