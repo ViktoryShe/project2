@@ -21,12 +21,10 @@ headerCallButton.addEventListener('click', function () {
   }
 })
 
-window.addEventListener('click', function (event) {
+modalCall.addEventListener('click', function (event) {
   if (
-    !modalCall.contains(event.target) &&
-    event.target !== openCallButton &&
-    event.target !== closeCallButton &&
-    event.target !== headerCallButton
+    event.target.classList.contains('popup-call') ||
+    event.target.parentElement.classList.contains('popup-call')
   ) {
     closeCall()
   }

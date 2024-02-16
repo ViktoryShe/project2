@@ -8,15 +8,16 @@ function openModal() {
 function closeModal() {
   modal.classList.remove('show')
 }
+
+function handleClickOutside(event) {
+  if (
+    event.target.classList.contains('popup') ||
+    event.target.parentElement.classList.contains('popup')
+  ) {
+    closeModal()
+  }
+}
+
 openModalButton.addEventListener('click', openModal)
 closeModalButton.addEventListener('click', closeModal)
-
-window.addEventListener('click', function (event) {
-  if (
-    !modal.contains(event.target) &&
-    event.target !== openModalButton &&
-    event.target !== closeModalButton
-  ) {
-    modal.classList.remove('show')
-  }
-})
+modal.addEventListener('click', handleClickOutside)

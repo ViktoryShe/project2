@@ -22,13 +22,11 @@ headerChatButton.addEventListener('click', function () {
   }
 })
 
-window.addEventListener('click', function (event) {
+modalChat.addEventListener('click', function (event) {
   if (
-    !modalChat.contains(event.target) &&
-    event.target !== openChatButton &&
-    event.target !== closeChatButton &&
-    event.target !== headerChatButton
+    event.target.classList.contains('popup-chat') ||
+    event.target.parentElement.classList.contains('popup-chat')
   ) {
-    closeCall()
+    closeChat()
   }
 })
